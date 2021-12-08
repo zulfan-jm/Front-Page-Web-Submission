@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+  --primary-color: #ffff00;
+  --secondary-color: #1c3fa8;
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+code,
+pre {
+  background: #333;
+  color: #333;
+  padding: 10px;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: #333;
+  height: 70px;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar li {
+  color: #333;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.navbar li:hover {
+  border-bottom: 2px #333 solid;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+}
+
+/* Register */
+.register {
+  height: 400px;
+  background-color: var(--primary-color);
+  color: #333;
+  position: relative;
+}
+
+.register h1 {
+  font-size: 40px;
+}
+
+.register p {
+  margin: 20px 0;
+}
+
+.register .grid {
+  overflow: visible;
+  grid-template-columns: 55% auto;
+  gap: 30px;
+}
+
+.register-text {
+  animation: slideInFromLeft 1s ease-in;
+}
+
+.register::before,
+.register::after {
+  content: '';
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background: #fff;
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+}
+
+/* Feature */
+.feature {
+  padding-top: 100px;
+  animation: slideInFromBottom 1s ease-in;
+}
+
+.feature-heading {
+  max-width: 500px;
+  margin: auto;
+}
+
+.feature .grid h3 {
+  font-size: 35px;
+}
+
+.feature .grid p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.feature-images {
+  max-width: 100px;
+  object-position: center;
+}
+
+.feature .card {
+  max-width: 300px;
+  transition: transform 0.2s ease-in;
+}
+
+.feature .card:hover {
+  transform: scale(1.05);
+}
+
+.feature .flex {
+  flex-wrap: wrap;
+}
+
+/* Course */
+.course .grid {
+  grid-template-columns: 4fr 3fr;
+}
+
+/* Founder */
+.founder .flex {
+  flex-wrap: wrap;
+}
+
+.founder .card {
+  max-width: 300px;
+  height: 460px;
+  overflow: auto;
+  text-align: center;
+  margin: 18px 10px 40px;
+  transition: transform 0.2s ease-in;
+}
+
+.founder .card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.founder .card:hover {
+  transform: scale(1.05);
+}
+
+.founder-images {
+  max-width: 200px;
+  max-height: auto;
+  border-radius: 50%;
+}
+
+/* Footer */
+.footer .social a {
+  margin: 0 10px;
+}
+
+.icon {
+  width: 50px;
+}
+
+.icon:hover {
+  transform: scale(0.90);
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Tablets and under */
+@media (max-width: 768px) {
+  .grid,
+  .register .grid,
+  .feature .grid,
+  .cli .grid,
+  .course .grid,
+  .features-main .grid,
+  .docs-main .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .register {
+    height: auto;
+  }
+
+  .register-text {
+    text-align: center;
+    margin: 40px;
+    animation: slideInFromTop 1s ease-in;
+  }
+
+  .founder .flex {
+    flex-direction: column;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+}
